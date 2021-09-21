@@ -49,7 +49,7 @@ const users = [
 
 const filterArray = (arr) => {
   const newArray = [];
-  arr.map((item, index) => {
+  arr.forEach((item) => {
     if (item.scores > 85) {
       newArray.push(item);
     }
@@ -88,7 +88,7 @@ const addUser = (arr, newObject) => {
 
 const addUserSkill = (arr, user, skill) => {
   let changeDone = false;
-  arr.map((el) => {
+  arr.forEach((el) => {
     if (el.name === user) {
       changeDone = true;
       for (let i = 0; i < skill.length; i++) {
@@ -99,21 +99,21 @@ const addUserSkill = (arr, user, skill) => {
   changeDone ? console.log(arr, "result") : console.log("user is not exist");
 };
 
-// addUserSkill(users, "Adil", ["CSS", "JavaScript"]);
+// addUserSkill(users, "John", ["CSS", "JavaScript"]);
 
 //=============================================================================================//
 
 /* d. Write a function which editUser if the user exist in the users array. */
 
-const editUser = (arr, user) => {
+const editUser = (arr, user, age1) => {
   let changeDone = false;
-  arr.map((el) => {
+  arr.forEach((el) => {
     if (el.name === user) {
       changeDone = true;
-      el.age = 20;
+      el.age = age1;
     }
   });
   changeDone ? console.log(arr, "result") : console.log("user is not exist");
 };
 
-// editUser(users, "John");
+editUser(users, "Martha", 20);

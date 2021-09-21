@@ -17,13 +17,12 @@ const countries = [
 
 const createArrayOfArrays = (arr) => {
   const newArray = [];
-  arr.map((item, index) => {
-    newArray[index] = [];
-    newArray[index].push(
-      item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()
-    );
-    newArray[index].push(item.substring(0, 3));
-    newArray[index].push(item.length);
+  arr.forEach((item) => {
+    newArray.push([
+      item.charAt(0) + item.slice(1).toLowerCase(),
+      item.substring(0, 3),
+      item.length,
+    ]);
   });
   return newArray;
 };
